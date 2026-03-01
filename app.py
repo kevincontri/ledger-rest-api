@@ -2,7 +2,11 @@ from services import LedgerService
 from fastapi import FastAPI, HTTPException
 from schemas import TransactionCreate, TransactionUpdate, TransactionResponse
 from typing import List
-app = FastAPI()
+app = FastAPI(
+    title="Ledger REST API",
+    description="REST API for managing financial transactions",
+    version='1.0'
+)
 
 @app.post("/ledger/{ledger_name}/transactions", response_model=TransactionResponse)
 def create_transaction(ledger_name: str, data: TransactionCreate):
