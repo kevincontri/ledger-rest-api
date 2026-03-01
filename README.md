@@ -7,6 +7,12 @@ This project demonstrates fundamental concepts in backend, such as:
 - JSON persistence
 - Proper handling of HTTP status
 
+#### Stack:
+- Python
+- FastAPI
+- Pydantic
+- Uvicorn
+
 #### Project Structure:
 - `app.py` - API layer (input/output validation and HTTP routes)
 - `services.py` - Business rules
@@ -17,7 +23,7 @@ This project demonstrates fundamental concepts in backend, such as:
 
 #### Installation:
 Clone the repository:<br>
-```https://github.com/kevincontri/ledger-rest-api.git``` <br>
+```git clone https://github.com/kevincontri/ledger-rest-api.git``` <br>
 ```cd ledger-rest-api```<br><br>
 Create and activate virtual environment:<br>
 ```python -m venv venv```<br>
@@ -64,6 +70,7 @@ Request body (any combination of fields):<br>
 {
   "amount": 200,
   "category": "rent"
+}
 ```
 
 #### Future improvements
