@@ -17,11 +17,13 @@ class LedgerService:
         return transaction
 
     def get_all(self) -> List[Transaction]:
-        """Returns all Transaction objects from self.transactions list"""
+        """Retrieve all stored transactions."""
 
         return self.transactions
 
     def get_balance(self):
+        """Calculate and return the current balance."""
+        
         balance = 0
         for t in self.transactions:
             if t.transaction_type == "income":
@@ -31,6 +33,8 @@ class LedgerService:
         return balance
 
     def delete(self, transaction_id: str):
+        """Remove a transaction by its ID and return it."""
+        
         for index, transaction in enumerate(self.transactions):
             if transaction.id == transaction_id:
                 removed = self.transactions.pop(index)
@@ -39,6 +43,8 @@ class LedgerService:
         return None
 
     def edit(self, transaction_id: str, amount=None, category=None, transaction_type=None):
+        """Update fields of a transaction by ID and save changes."""
+        
         edited = False
         for transaction in self.transactions:
             if transaction.id == transaction_id:
@@ -57,4 +63,5 @@ class LedgerService:
                 self.storage.save(self.transactions)
 
                 return edited
+
         return edited
