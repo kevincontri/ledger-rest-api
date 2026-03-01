@@ -5,7 +5,7 @@ This project demonstrates fundamental concepts in backend, such as:
 - Layered architecture (API -> Service -> Storage -> Model)
 - Request/response validation
 - JSON persistence
-- Proper handling of HTTP status
+- Handling HTTP status
 
 #### Stack:
 - Python
